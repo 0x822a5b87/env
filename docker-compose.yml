@@ -1,9 +1,3 @@
-# zookeeper 2181,2182,2183
-# kafka 9092
-# node-exporter 9100
-# alertmanager 9093
-# cadvisor 8087
-# grafana 3000
 version: "3" 
 
 networks:
