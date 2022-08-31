@@ -60,13 +60,13 @@ services:
       - zoo2
       - zoo3
     volumes:
-      - ./kafka/kafka_data:/bitnami/kafka
+      - ./data/kafka:/bitnami/kafka
 
   prometheus:
     image: prom/prometheus:v2.36.2
     volumes:
-      - ./prometheus/:/etc/prometheus/
-      - ./prometheus_data:/prometheus
+      - ./conf/prometheus/:/etc/prometheus/
+      - ./data/prometheus:/prometheus
     user: "0:0"
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -111,7 +111,7 @@ services:
     ports:
       - 9093:9093
     volumes:
-      - ./alertmanager/:/etc/alertmanager/
+      - ./conf/alertmanager/:/etc/alertmanager/
     networks:
       - all
     restart: always
@@ -142,9 +142,9 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - ./conf/grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
-      - ./grafana/config.monitoring
+      - ./conf/grafana/config.monitoring
     networks:
       - all
     restart: always
@@ -173,4 +173,4 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: test
     volumes:
-      - ./mysql/data:/var/lib/mysql
+      - ./data/mysql:/var/lib/mysql

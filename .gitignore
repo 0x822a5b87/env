@@ -1,4 +1,5 @@
-prometheus_data/
-grafana_data/
-kafka/kafka_data
-mysql/data
+data/grafana
+data/kafka
+data/mysql
+data/prometheus
+data/redis
