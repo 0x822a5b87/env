@@ -1,3 +1,4 @@
 prometheus_data/
 grafana_data/
 kafka/kafka_data
+mysql/data

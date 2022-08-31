@@ -162,3 +162,15 @@ services:
     restart: always
     depends_on:
       - kafka
+
+  mysql:
+    ports:
+      - 3306:${MYSQL_PORT}
+    image: mysql:${MYSQL_VERSION}
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: test
+    volumes:
+      - ./mysql/data:/var/lib/mysql
