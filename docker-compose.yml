@@ -174,3 +174,14 @@ services:
       MYSQL_DATABASE: test
     volumes:
       - ./data/mysql:/var/lib/mysql
+
+  redis:
+    image: redis:${REDIS_VERSION}
+    ports:
+      - ${REDIS_PORT}:6379
+    networks:
+      - all
+    restart: always
+    volumes:
+      - ./conf/redis:/usr/local/etc/redis
+      - ./data/redis:/data
