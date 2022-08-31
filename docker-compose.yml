@@ -182,6 +182,7 @@ services:
     networks:
       - all
     restart: always
+    command: redis-server --save 20 1 --requirepass ${REDIS_PASSWORD}
     volumes:
       - ./conf/redis:/usr/local/etc/redis
       - ./data/redis:/data
