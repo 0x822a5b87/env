@@ -13,6 +13,8 @@ my dev environment
 | grafana       | 3000      | 3000           | user admin<br />password 123456 |
 | mysql         | 3306      | 3306           | root/123456                     |
 | redis         | 6379      | 16379          | password 123456                 |
+| pulsar        | 6650      | 6650           | broker                          |
+| pulsar        | 8080      | 6651           | http                            |
 
 ## error
 

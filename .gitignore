@@ -3,3 +3,4 @@ data/kafka/*
 data/mysql/*
 data/prometheus/*
 data/redis/*
+data/pulsar/*

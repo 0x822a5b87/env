@@ -186,3 +186,18 @@ services:
     volumes:
       - ./conf/redis:/usr/local/etc/redis
       - ./data/redis:/data
+
+  pulsar:
+    image: apachepulsar/pulsar:${PULSAR_VERSION}
+    container_name: pulsar
+    user: "0:0"
+    ports:
+      - ${PULSAR_BROKER_PORT}:6650
+      - ${PULSAR_HTTP_PORT}:8080
+    networks:
+      - all
+    restart: always
+    command: /bin/bash -c "bin/pulsar standalone"
+    volumes:
+      - ./data/pulsar:/pulsar/data
+      - ./conf/pulsar:/pulsar/conf
